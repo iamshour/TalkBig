@@ -13,6 +13,7 @@ export default function Navbar() {
 	const [navActive, setNavActive] = useState(false)
 
 	const [state, dispatch] = useContext(GlobalContext)
+	console.log(state?.notify)
 
 	const switcherClass = () => {
 		return navActive ? "nav-active" : ""
@@ -49,7 +50,6 @@ export default function Navbar() {
 								onClick={() => {
 									setNavActive(false)
 									if (item.title.startsWith("Sign Out")) {
-										// console.log("open Modal")
 										signOut(dispatch)
 										navigate("/auth")
 									} else {

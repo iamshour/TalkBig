@@ -20,7 +20,7 @@ export default function Notification() {
 				})
 			}, 4000)
 		}
-	}, [notify?.error, notify?.success])
+	}, [notify?.error, notify?.success, dispatch])
 
 	return (
 		<>

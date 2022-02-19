@@ -31,6 +31,7 @@ export default function Auth() {
 		} else {
 			signUp(dispatch, userData)
 		}
+		console.log(state?.notify)
 	}
 
 	useEffect(() => {

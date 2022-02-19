@@ -1,5 +1,5 @@
 import Modal from "comps/fragments/Modal"
-import React, { useState } from "react"
+import { useState } from "react"
 import { Logo } from "utility"
 import Bot from "./Bot"
 
@@ -11,7 +11,7 @@ export default function Chat() {
 			text: "Hey there!👋 Nice to meet you!💛 Ask me anything on our services. I'm all ears😉",
 		},
 	]
-	const [chatFlow, setChatFlow] = useState(initial)
+	// const [chatFlow, setChatFlow] = useState(initial)
 
 	return (
 		<>
@@ -24,7 +24,7 @@ export default function Chat() {
 							{Logo()}
 						</div>
 						<div className='middle'>
-							{chatFlow.map((item, index) => (
+							{initial.map((item, index) => (
 								<p key={index}>{item?.text}</p>
 							))}
 						</div>
