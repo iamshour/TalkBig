@@ -1,0 +1,43 @@
+@mixin centering {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+@mixin line-hover {
+	cursor: pointer;
+	position: relative;
+
+	&::before {
+		transition: all 250ms ease-in-out;
+		content: "";
+		position: absolute;
+		width: 100%;
+		background: var(--bg-1);
+		height: 2px;
+		border-radius: 4px;
+		transform: translateX(-10px);
+		opacity: 0;
+		bottom: -4px;
+		left: 0;
+		right: 0;
+	}
+
+	&:hover,
+	&:active {
+		&::before {
+			transform: translateX(0px);
+			opacity: 1;
+		}
+	}
+}
+
+@mixin fade-in {
+	opacity: 0;
+	animation: fade-in 0.2s ease-in forwards;
+	@keyframes fade-in {
+		100% {
+			opacity: 1;
+		}
+	}
+}

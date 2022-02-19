@@ -1,0 +1,161 @@
+:root {
+	--bg-1: #1568c0;
+	--bg-2: #afccf4;
+
+	--font-1: #03073d;
+	--font-hover: #2f8ef3;
+	--font-2: #f9f9f9;
+
+	--nav-bg: linear-gradient(55deg, #93bcf5, #aecbf3);
+	--nav-btn-bg: #aecef5;
+	--nav-btn-shadow: 5px 5px 9px #99b5d8, -5px -5px 9px #c3e7ff;
+
+	--input-bg: #ffffff99;
+	--input-shadow: inset 5px 5px 10px #d7dada, inset -4px -4px 8px #fcfeff;
+	--input-border: #fff;
+	--placeholder: rgba(0, 0, 0, 0.4);
+
+	--card-bg-main: rgba(255, 255, 255, 0.6);
+
+	--btn-main-bg: #dbe7f7;
+	--btn-main-shadow: 9px 9px 12px #b4bdcb, -9px -9px 12px #ffffff;
+
+	--app-bg: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' version='1.1' xmlns:xlink='http://www.w3.org/1999/xlink' xmlns:svgjs='http://svgjs.com/svgjs' width='1440' height='1000' preserveAspectRatio='none' viewBox='0 0 1440 1000'%3e%3cg mask='url(%26quot%3b%23SvgjsMask1410%26quot%3b)' fill='none'%3e%3crect width='1440' height='1000' x='0' y='0' fill='url(%23SvgjsLinearGradient1411)'%3e%3c/rect%3e%3cpath d='M1440 0L807.61 0L1440 179.47z' fill='rgba(255%2c 255%2c 255%2c .1)'%3e%3c/path%3e%3cpath d='M807.61 0L1440 179.47L1440 289.06L702.79 0z' fill='rgba(255%2c 255%2c 255%2c .075)'%3e%3c/path%3e%3cpath d='M702.79 0L1440 289.06L1440 625.04L463.34999999999997 0z' fill='rgba(255%2c 255%2c 255%2c .05)'%3e%3c/path%3e%3cpath d='M463.3499999999999 0L1440 625.04L1440 722.2099999999999L317.3399999999999 0z' fill='rgba(255%2c 255%2c 255%2c .025)'%3e%3c/path%3e%3cpath d='M0 1000L648.65 1000L0 645.03z' fill='rgba(0%2c 0%2c 0%2c .1)'%3e%3c/path%3e%3cpath d='M0 645.03L648.65 1000L687.28 1000L0 568.87z' fill='rgba(0%2c 0%2c 0%2c .075)'%3e%3c/path%3e%3cpath d='M0 568.87L687.28 1000L777.51 1000L0 458.1z' fill='rgba(0%2c 0%2c 0%2c .05)'%3e%3c/path%3e%3cpath d='M0 458.1L777.51 1000L1169.45 1000L0 445.11z' fill='rgba(0%2c 0%2c 0%2c .025)'%3e%3c/path%3e%3c/g%3e%3cdefs%3e%3cmask id='SvgjsMask1410'%3e%3crect width='1440' height='1000' fill='white'%3e%3c/rect%3e%3c/mask%3e%3clinearGradient x1='7.64%25' y1='-11%25' x2='92.36%25' y2='111%25' gradientUnits='userSpaceOnUse' id='SvgjsLinearGradient1411'%3e%3cstop stop-color='rgba(14%2c 42%2c 71%2c 1)' offset='0'%3e%3c/stop%3e%3cstop stop-color='rgba(174%2c 204%2c 243%2c 1)' offset='0'%3e%3c/stop%3e%3cstop stop-color='rgba(179%2c 212%2c 255%2c 1)' offset='1'%3e%3c/stop%3e%3cstop stop-color='rgba(218%2c 234%2c 255%2c 1)' offset='1'%3e%3c/stop%3e%3cstop stop-color='rgba(179%2c 212%2c 255%2c 1)' offset='1'%3e%3c/stop%3e%3c/linearGradient%3e%3c/defs%3e%3c/svg%3e");
+}
+
+[data-theme="dark"] {
+	--bg-1: #1568c0;
+
+	--font-1: #b0b5f8;
+	--font-hover: #3479c4;
+
+	--nav-bg: linear-gradient(180deg, #0e2a48, #0e2b4b);
+	--nav-btn-bg: #0e2b4b;
+	--nav-btn-shadow: 5px 5px 7px #0c2642, -5px -5px 7px #103054;
+
+	--input-bg: #07192d;
+	--input-shadow: inset 5px 5px 4px #061424, inset -5px -5px 4px #081e36;
+	--input-border: #031831;
+	--placeholder: rgba(176, 181, 248, 0.5);
+
+	--card-bg-main: rgba(0, 0, 0, 0.4);
+
+	--btn-main-bg: #07192d;
+	--btn-main-shadow: 5px 5px 4px #061526, -5px -5px 4px #081d34;
+
+	--app-bg: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' version='1.1' xmlns:xlink='http://www.w3.org/1999/xlink' xmlns:svgjs='http://svgjs.com/svgjs' width='1440' height='1000' preserveAspectRatio='none' viewBox='0 0 1440 1000'%3e%3cg mask='url(%26quot%3b%23SvgjsMask1044%26quot%3b)' fill='none'%3e%3crect width='1440' height='1000' x='0' y='0' fill='url(%23SvgjsLinearGradient1045)'%3e%3c/rect%3e%3cpath d='M1440 0L1340.84 0L1440 454.25z' fill='rgba(255%2c 255%2c 255%2c .1)'%3e%3c/path%3e%3cpath d='M1340.84 0L1440 454.25L1440 590.84L896.9899999999999 0z' fill='rgba(255%2c 255%2c 255%2c .075)'%3e%3c/path%3e%3cpath d='M896.99 0L1440 590.84L1440 668.6600000000001L785.46 0z' fill='rgba(255%2c 255%2c 255%2c .05)'%3e%3c/path%3e%3cpath d='M785.46 0L1440 668.6600000000001L1440 793.0100000000001L535.1800000000001 0z' fill='rgba(255%2c 255%2c 255%2c .025)'%3e%3c/path%3e%3cpath d='M0 1000L228.09 1000L0 785.9300000000001z' fill='rgba(0%2c 0%2c 0%2c .1)'%3e%3c/path%3e%3cpath d='M0 785.9300000000001L228.09 1000L822.48 1000L0 699.73z' fill='rgba(0%2c 0%2c 0%2c .075)'%3e%3c/path%3e%3cpath d='M0 699.73L822.48 1000L954.6 1000L0 282.15000000000003z' fill='rgba(0%2c 0%2c 0%2c .05)'%3e%3c/path%3e%3cpath d='M0 282.1500000000001L954.6 1000L1279.4 1000L0 133.38000000000008z' fill='rgba(0%2c 0%2c 0%2c .025)'%3e%3c/path%3e%3c/g%3e%3cdefs%3e%3cmask id='SvgjsMask1044'%3e%3crect width='1440' height='1000' fill='white'%3e%3c/rect%3e%3c/mask%3e%3clinearGradient x1='7.64%25' y1='-11%25' x2='92.36%25' y2='111%25' gradientUnits='userSpaceOnUse' id='SvgjsLinearGradient1045'%3e%3cstop stop-color='%230e2a47' offset='0'%3e%3c/stop%3e%3cstop stop-color='rgba(5%2c 59%2c 128%2c 1)' offset='1'%3e%3c/stop%3e%3c/linearGradient%3e%3c/defs%3e%3c/svg%3e");
+}
+
+html,
+body,
+*,
+*::after,
+*::before {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+ul,
+ol,
+li {
+	margin: 0;
+	padding: 0;
+	list-style: none;
+	text-indent: 0;
+}
+
+html {
+	line-height: 1.15;
+	-webkit-text-size-adjust: 100%;
+	font-size: 62.5%;
+}
+
+a,
+Link {
+	text-decoration: none;
+	color: inherit;
+	font: inherit;
+}
+
+body {
+	width: 100%;
+	height: 100vh;
+	background-image: var(--app-bg);
+	height: 100%;
+	width: 100vw;
+	user-select: none;
+	overflow-x: hidden;
+	margin: 0 auto;
+	max-width: 1800px;
+	font-family: "Poppins", sans-serif;
+	&::-webkit-scrollbar {
+		display: unset;
+		width: 4px;
+	}
+	&::-webkit-scrollbar-track {
+		background: transparent;
+	}
+	&::-webkit-scrollbar-thumb {
+		background: var(--secondary-font);
+		border-radius: 16px;
+	}
+}
+
+div,
+input,
+textarea,
+button,
+select,
+a {
+	-webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+	font-family: inherit;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+	font-family: "Damion", cursive;
+	font-weight: normal;
+}
+
+button {
+	font: unset;
+	font-family: inherit;
+	border: 0;
+	background: unset;
+	&:focus {
+		outline: 0;
+	}
+}
+
+label,
+textarea,
+input {
+	&:focus {
+		outline: 0;
+	}
+	&:-webkit-autofill,
+	&:-webkit-autofill:hover,
+	&:-webkit-autofill:focus,
+	&:-webkit-autofill:active {
+		transition: background-color 5000s;
+		-webkit-text-fill-color: var(--font-1) !important;
+	}
+}
+
+// @media (min-width: $breakpoint-large-desktop) {
+// 	html {
+// 		font-size: 11px;
+// 	}
+// }
+// @media (min-width: $breakpoint-max-desktop) {
+// 	html {
+// 		font-size: 12px;
+// 		min-height: 100vh;
+// 		background: var(--app-bg-color);
+// 	}
+// }

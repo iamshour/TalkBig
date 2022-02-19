@@ -1,0 +1,87 @@
+@import url("https://fonts.googleapis.com/css2?family=Damion&family=Poppins:wght@400;700&display=swap");
+
+@import "./resets";
+@import "./mixins";
+@import "pages/about";
+@import "pages/auth";
+@import "pages/forgot";
+@import "pages/home";
+@import "pages/notFound";
+@import "pages/profile";
+@import "comps/auth/globe";
+@import "comps/header/navbar";
+@import "comps/header/theme";
+@import "comps/fragments";
+
+.btn-main {
+	@include centering;
+	cursor: pointer;
+	transition: all 200ms ease-in-out;
+	color: var(--bg-1);
+	border-radius: 4px;
+	background: var(--btn-main-bg);
+	box-shadow: var(--btn-main-shadow);
+
+	p,
+	.icon {
+		font-size: inherit;
+		color: inherit;
+	}
+	&:hover,
+	&:active {
+		transform: translateY(-2px);
+	}
+}
+
+header {
+	width: 100%;
+	padding: 2rem 1.6rem;
+	display: flex;
+	justify-content: flex-end;
+	align-items: center;
+}
+
+input {
+	width: 100%;
+	font-size: 1.6rem;
+	color: var(--font-1);
+	line-height: 2.4rem;
+
+	&::placeholder {
+		color: var(--placeholder);
+	}
+}
+
+.input-bar-icon,
+.input-bar input {
+	border: 0.8px solid var(--input-border);
+	box-shadow: var(--input-shadow);
+	background: var(--input-bg);
+	padding: 1.2rem;
+	border-radius: 8px;
+}
+
+.input-bar-icon {
+	display: flex;
+	align-items: center;
+	justify-content: flex-start;
+	font-size: 2.2rem;
+	transition: border-color 250ms ease-in-out;
+
+	.icon {
+		transition: color 250ms ease-in-out;
+		color: var(--placeholder);
+		font-size: inherit;
+		margin-right: 0.8rem;
+	}
+	input {
+		border: 0;
+		background: none;
+	}
+	&:focus-within {
+		border-color: var(--bg-1);
+		.icon {
+			color: var(--bg-1);
+		}
+	}
+}
