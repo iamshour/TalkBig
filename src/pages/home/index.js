@@ -1,34 +1,47 @@
-import ChatBot from "comps/home/ChatBot"
+import Chat from "comps/home/Chat"
 import Graph from "comps/home/Graph"
+import { BsPatchCheck } from "react-icons/bs"
 
 export default function Home() {
+	const textList = [
+		{ text: "Live-chat omnichannel web or app integration!" },
+		{
+			text: "Build custom chatbots &amp; integrate it's superpowers for user's websites or via their social media accounts!",
+		},
+		{ text: "Code-free tools to implement advanced web messaging software!" },
+	]
+
 	return (
 		<div>
 			<div className='home-page'>
-				<div className='home-text'>
-					<section>
+				<section className='text-section'>
+					<div className='sec-1'>
 						<h1>Let's build the future together! 💙</h1>
 						<p>
 							<span>TalkBig</span> helps startsups &amp; businesses stand-out with award
 							winning messaging integrations and tools!
 						</p>
-					</section>
-					<section>
-						<h1>Services to our users</h1>
-						<ul>
-							<li>
-								Build custom chatbots &amp; integrate it's superpowers for user's websites
-								or via their social media accounts!
-							</li>
-							<li>Live-chat omnichannel web or app integration!</li>
-							<li>Code-free tools to implement advanced web messaging software!</li>
-						</ul>
-					</section>
-				</div>
-				<div className='graph'>
+					</div>
+					<div className='sec-2'>
+						<h1>Services for our users</h1>
+						<div className='list-container'>
+							{textList.map((item, index) => (
+								<div className='row' key={index}>
+									<div className='icon'>
+										<BsPatchCheck />
+									</div>
+									<p>{item.text}</p>
+								</div>
+							))}
+						</div>
+					</div>
+				</section>
+				<section className='graph-section'>
 					<Graph />
-					<ChatBot />
-				</div>
+				</section>
+				<section className='chatbot-section'>
+					<Chat />
+				</section>
 			</div>
 		</div>
 	)

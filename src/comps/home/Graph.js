@@ -37,10 +37,6 @@ export default function Graph() {
 			legend: {
 				position: "bottom",
 			},
-			title: {
-				display: true,
-				text: "Chart.js Line Chart",
-			},
 		},
 	}
 

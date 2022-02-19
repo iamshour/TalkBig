@@ -1,14 +1,18 @@
-import { useState } from "react"
+import { useContext, useState } from "react"
 import { GoHome } from "react-icons/go"
 import { AiOutlineUser } from "react-icons/ai"
 import { FiLogOut } from "react-icons/fi"
 import { BsInfoCircle } from "react-icons/bs"
 import { useNavigate } from "react-router-dom"
 import { Logo } from "utility"
+import { signOut } from "context/actions"
+import { GlobalContext } from "context/globalContext"
 
 export default function Navbar() {
 	const navigate = useNavigate()
 	const [navActive, setNavActive] = useState(false)
+
+	const [state, dispatch] = useContext(GlobalContext)
 
 	const switcherClass = () => {
 		return navActive ? "nav-active" : ""
@@ -45,7 +49,9 @@ export default function Navbar() {
 								onClick={() => {
 									setNavActive(false)
 									if (item.title.startsWith("Sign Out")) {
-										console.log("open Modal")
+										// console.log("open Modal")
+										signOut(dispatch)
+										navigate("/auth")
 									} else {
 										navigate(item.link)
 									}

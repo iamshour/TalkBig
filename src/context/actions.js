@@ -105,3 +105,30 @@ export const getstats = async (dispatch) => {
 		}
 	}
 }
+
+export const signOut = async (dispatch) => {
+	try {
+		dispatch({
+			type: NOTIFY,
+			pauload: { loading: true },
+		})
+		dispatch({
+			type: SIGN_OUT,
+		})
+		setTimeout(() => {
+			dispatch({
+				type: NOTIFY,
+				payload: {
+					loading: false,
+					success: `Signed Out successfully!`,
+				},
+			})
+		}, 10)
+		localStorage.removeItem("user")
+	} catch (error) {
+		dispatch({
+			type: NOTIFY,
+			payload: { error: error },
+		})
+	}
+}
