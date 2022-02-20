@@ -6,7 +6,7 @@ export default function Home() {
 	const textList = [
 		{ text: "Live-chat omnichannel web or app integration!" },
 		{
-			text: "Build custom chatbots &amp; integrate it's superpowers for user's websites or via their social media accounts!",
+			text: "Build custom chatbots integrate it's superpowers for user's websites or via their social media accounts!",
 		},
 		{ text: "Code-free tools to implement advanced web messaging software!" },
 	]
@@ -26,7 +26,10 @@ export default function Home() {
 						<h1>Services for our users</h1>
 						<div className='list-container'>
 							{textList.map((item, index) => (
-								<div className='row' key={index}>
+								<div
+									className='row'
+									key={index}
+									style={{ animationDelay: `${index / 2}s` }}>
 									<div className='icon'>
 										<BsPatchCheck />
 									</div>

@@ -10,7 +10,7 @@ import Notification from "comps/fragments/Notification"
 
 function App() {
 	const pages = [
-		{ path: "/home", component: <Home /> },
+		{ path: "/", component: <Home /> },
 		{ path: "/profile", component: <Profile /> },
 		{ path: "/about", component: <About /> },
 	]

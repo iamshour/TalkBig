@@ -50,13 +50,14 @@
 			align-items: center;
 			max-width: 40rem;
 			margin: 0 auto;
+			overflow: hidden;
 
 			.text {
 				width: 100%;
 				padding: 0.8rem 0 4rem 2.4rem;
 
 				h1 {
-					font-size: 5rem;
+					font-size: 4rem;
 					color: var(--bg-1);
 					margin-bottom: 0.8rem;
 				}
@@ -79,6 +80,8 @@
 				flex-direction: column;
 				align-items: center;
 				height: 50%;
+				min-height: 200px;
+				overflow: hidden;
 
 				.input-bar-icon {
 					width: 85%;
@@ -130,6 +133,10 @@
 					color: var(--bg-1);
 					@include line-hover;
 				}
+			}
+
+			.sign-up-wrapper {
+				min-height: 270px;
 			}
 
 			.submit-btn {

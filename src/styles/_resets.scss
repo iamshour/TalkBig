@@ -11,13 +11,13 @@
 	--nav-btn-shadow: 5px 5px 9px #99b5d8, -5px -5px 9px #c3e7ff;
 
 	--input-bg: #ffffff99;
-	--input-bg-large: rgba(255, 255, 255, 0.5);
+	--input-bg-large: rgb(230, 227, 227);
 	--input-shadow: inset 5px 5px 10px #d7dada, inset -4px -4px 8px #ffffff;
 	--input-shadow-large: inset 10px 10px 12px #c2c2c2, inset -9px -9px 10px #fcfeff;
 	--input-border: #fff;
 	--placeholder: rgba(0, 0, 0, 0.4);
 
-	--card-bg-main: rgba(255, 255, 255, 0.6);
+	--card-bg-main: rgba(255, 255, 255, 0.7);
 
 	--btn-main-bg: #dbe7f7;
 	--btn-main-shadow: 9px 9px 12px #b4bdcb, -9px -9px 12px #ffffff;
@@ -30,6 +30,7 @@
 
 	--font-1: #b0b5f8;
 	--font-hover: #3479c4;
+	--font-2: #13142e;
 
 	--nav-bg: linear-gradient(180deg, #0e2a48, #0e2b4b);
 	--nav-btn-bg: #0e2b4b;
@@ -47,6 +48,11 @@
 
 	--app-bg: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' version='1.1' xmlns:xlink='http://www.w3.org/1999/xlink' xmlns:svgjs='http://svgjs.com/svgjs' width='1440' height='1000' preserveAspectRatio='none' viewBox='0 0 1440 1000'%3e%3cg mask='url(%26quot%3b%23SvgjsMask1044%26quot%3b)' fill='none'%3e%3crect width='1440' height='1000' x='0' y='0' fill='url(%23SvgjsLinearGradient1045)'%3e%3c/rect%3e%3cpath d='M1440 0L1340.84 0L1440 454.25z' fill='rgba(255%2c 255%2c 255%2c .1)'%3e%3c/path%3e%3cpath d='M1340.84 0L1440 454.25L1440 590.84L896.9899999999999 0z' fill='rgba(255%2c 255%2c 255%2c .075)'%3e%3c/path%3e%3cpath d='M896.99 0L1440 590.84L1440 668.6600000000001L785.46 0z' fill='rgba(255%2c 255%2c 255%2c .05)'%3e%3c/path%3e%3cpath d='M785.46 0L1440 668.6600000000001L1440 793.0100000000001L535.1800000000001 0z' fill='rgba(255%2c 255%2c 255%2c .025)'%3e%3c/path%3e%3cpath d='M0 1000L228.09 1000L0 785.9300000000001z' fill='rgba(0%2c 0%2c 0%2c .1)'%3e%3c/path%3e%3cpath d='M0 785.9300000000001L228.09 1000L822.48 1000L0 699.73z' fill='rgba(0%2c 0%2c 0%2c .075)'%3e%3c/path%3e%3cpath d='M0 699.73L822.48 1000L954.6 1000L0 282.15000000000003z' fill='rgba(0%2c 0%2c 0%2c .05)'%3e%3c/path%3e%3cpath d='M0 282.1500000000001L954.6 1000L1279.4 1000L0 133.38000000000008z' fill='rgba(0%2c 0%2c 0%2c .025)'%3e%3c/path%3e%3c/g%3e%3cdefs%3e%3cmask id='SvgjsMask1044'%3e%3crect width='1440' height='1000' fill='white'%3e%3c/rect%3e%3c/mask%3e%3clinearGradient x1='7.64%25' y1='-11%25' x2='92.36%25' y2='111%25' gradientUnits='userSpaceOnUse' id='SvgjsLinearGradient1045'%3e%3cstop stop-color='%230e2a47' offset='0'%3e%3c/stop%3e%3cstop stop-color='rgba(5%2c 59%2c 128%2c 1)' offset='1'%3e%3c/stop%3e%3c/linearGradient%3e%3c/defs%3e%3c/svg%3e");
 }
+
+$tablet-small: 550px;
+$tablet-large: 800px;
+$desktop-smal: 1080px;
+$desktop-large: 1200px;
 
 html,
 body,
@@ -120,8 +126,8 @@ h3,
 h4,
 h5,
 h6 {
-	font-family: "Damion", cursive;
-	font-weight: normal;
+	font-family: "Literata", serif;
+	font-weight: 500;
 }
 
 button {

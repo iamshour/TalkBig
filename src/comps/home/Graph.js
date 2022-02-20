@@ -25,7 +25,6 @@ ChartJS.register(
 
 export default function Graph() {
 	const [{ stats }, dispatch] = useContext(GlobalContext)
-	console.log(stats)
 
 	useEffect(() => {
 		getstats(dispatch)
@@ -57,8 +56,8 @@ export default function Graph() {
 	}
 
 	return (
-		<div className='chart-container'>
+		<>
 			<Line options={options} data={data} />
-		</div>
+		</>
 	)
 }

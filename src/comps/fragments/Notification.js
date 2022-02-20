@@ -5,7 +5,7 @@ import { NOTIFY } from "context/types"
 
 export default function Notification() {
 	const [{ notify }, dispatch] = useContext(GlobalContext)
-	const toastRef = useRef()
+	const toastRef = useRef(null)
 
 	useEffect(() => {
 		if (notify?.error || notify?.success) {

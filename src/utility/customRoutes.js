@@ -9,5 +9,5 @@ export const PrivateRoute = ({ children }) => {
 export const PublicRoute = ({ children }) => {
 	const authenticated = localStorage.getItem("user")
 
-	return authenticated ? <Navigate to='/home' /> : children
+	return authenticated ? <Navigate to='/' /> : children
 }

@@ -1,17 +1,32 @@
 import Modal from "comps/fragments/Modal"
-import { useState } from "react"
-import { Logo } from "utility"
+import { useEffect, useRef, useState } from "react"
+import { botGreeting, dialogue, Logo } from "utility"
 import Bot from "./Bot"
 
 export default function Chat() {
 	const [chatOpened, setChatOpened] = useState(false)
+	const [newMessage, setNewMessage] = useState("")
+	const scrollTo = useRef()
 
-	const initial = [
-		{
-			text: "Hey there!👋 Nice to meet you!💛 Ask me anything on our services. I'm all ears😉",
-		},
-	]
-	// const [chatFlow, setChatFlow] = useState(initial)
+	const [chatFlow, setChatFlow] = useState([botGreeting])
+
+	const handleSubmit = (e) => {
+		if (e.keyCode == 13 && e.shiftKey == false) {
+			e.preventDefault()
+
+			let personMsg = { text: newMessage, owner: "person" }
+			scrollTo.current.scrollIntoView({ behavior: "smooth" })
+
+			setChatFlow([...chatFlow, personMsg])
+
+			setTimeout(() => {
+				setChatFlow([...chatFlow, personMsg, dialogue(newMessage.toLowerCase())])
+				scrollTo.current.scrollIntoView({ behavior: "smooth" })
+			}, 2000)
+
+			setNewMessage("")
+		}
+	}
 
 	return (
 		<>
@@ -24,13 +39,22 @@ export default function Chat() {
 							{Logo()}
 						</div>
 						<div className='middle'>
-							{initial.map((item, index) => (
-								<p key={index}>{item?.text}</p>
+							{chatFlow.map((item, index) => (
+								<p key={index} className={item.owner}>
+									{item?.text}
+								</p>
 							))}
+							<div ref={scrollTo} />
 						</div>
-						<div className='bottom'>
-							<textarea name='chat' cols='2' placeholder='Type your message here' />
-						</div>
+						<form onSubmit={handleSubmit} className='bottom'>
+							<textarea
+								cols='2'
+								placeholder='Type your message here'
+								value={newMessage}
+								onChange={(e) => setNewMessage(e.target.value)}
+								onKeyDown={handleSubmit}
+							/>
+						</form>
 					</div>
 				</Modal>
 			)}

@@ -1,7 +1,8 @@
-import { NOTIFY, AUTH, SIGN_OUT, STATS } from "./types"
+import { NOTIFY, AUTH, SIGN_OUT, STATS, PROFILE, UPDATE } from "./types"
 import axios from "axios"
 
-const API = axios.create({ baseURL: "https://git.heroku.com/talkbig.git" })
+const API = axios.create({ baseURL: "https://talkbig.herokuapp.com" })
+// const API = axios.create({ baseURL: "http://localhost:5000" })
 
 API.interceptors.request.use((req) => {
 	if (localStorage.getItem("user")) {
@@ -29,10 +30,7 @@ export const signIn = async (dispatch, userData) => {
 				type: NOTIFY,
 				payload: {
 					loading: false,
-					success: `Welcome back ${
-						data.name.split(" ")[0].charAt(0).toUpperCase() +
-						data.name.split(" ")[0].slice(1)
-					}!`,
+					success: data.msg,
 				},
 			})
 		}, 10)
@@ -64,10 +62,7 @@ export const signUp = async (dispatch, userData) => {
 				payload: {
 					error: "",
 					loading: false,
-					success: `Hello ${
-						data?.name?.split(" ")[0]?.charAt(0)?.toUpperCase() +
-						data?.name?.split(" ")[0]?.slice(1)
-					}! Welcome to our platform!`,
+					success: data.msg,
 				},
 			})
 		}, 10)
@@ -82,16 +77,7 @@ export const signUp = async (dispatch, userData) => {
 
 export const getstats = async (dispatch) => {
 	try {
-		dispatch({
-			type: NOTIFY,
-			payload: { loading: true },
-		})
-		const { data } = await axios.get("/stats")
-		dispatch({
-			type: NOTIFY,
-			payload: { loading: false },
-		})
-
+		const { data } = await API.get("/stats")
 		dispatch({
 			type: STATS,
 			payload: data,
@@ -129,6 +115,73 @@ export const signOut = async (dispatch) => {
 		dispatch({
 			type: NOTIFY,
 			payload: { error: error },
+		})
+	}
+}
+
+export const viewProfile = async (dispatch, userId) => {
+	try {
+		const { data } = await API.get(`/users/${userId}`)
+		dispatch({
+			type: PROFILE,
+			payload: data,
+		})
+	} catch (error) {
+		dispatch({
+			type: NOTIFY,
+			payload: { error: error?.response?.data?.msg },
+		})
+	}
+}
+
+export const updateProfile = async (dispatch, userId, userData) => {
+	try {
+		dispatch({
+			type: NOTIFY,
+			payload: { loading: true },
+		})
+		const { data } = await API.put(`/users/profile/${userId}`, userData)
+		dispatch({
+			type: UPDATE,
+			payload: data,
+		})
+		setTimeout(() => {
+			dispatch({
+				type: NOTIFY,
+				payload: {
+					loading: false,
+					success: data.msg,
+				},
+			})
+		}, 10)
+	} catch (error) {
+		dispatch({
+			type: NOTIFY,
+			payload: { error: error?.response?.data?.msg },
+		})
+	}
+}
+
+export const updatePass = async (dispatch, userId, userData) => {
+	try {
+		dispatch({
+			type: NOTIFY,
+			payload: { loading: true },
+		})
+		const { data } = await API.put(`/users/password/${userId}`, userData)
+		setTimeout(() => {
+			dispatch({
+				type: NOTIFY,
+				payload: {
+					loading: false,
+					success: data.msg,
+				},
+			})
+		}, 10)
+	} catch (error) {
+		dispatch({
+			type: NOTIFY,
+			payload: { error: error?.response?.data?.msg },
 		})
 	}
 }

@@ -5,7 +5,8 @@ export const GlobalContext = createContext()
 
 const GlobalProvider = ({ children }) => {
 	const initialState = {
-		user: localStorage.getItem("user") ? JSON.parse(localStorage.getItem("user")) : {},
+		userId: {},
+		userInfo: {},
 		notify: {},
 		stats: [],
 	}

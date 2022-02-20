@@ -3,12 +3,12 @@
 	height: 100%;
 	display: grid;
 	grid-template-columns: 100%;
-	padding: 3rem 2rem;
+	padding: 3rem 2rem 6rem 2rem;
 
 	.text-section {
 		margin-bottom: 4rem;
 		.sec-1 {
-			margin-bottom: 2.4rem;
+			margin-bottom: 4rem;
 		}
 		.sec-1,
 		.sec-2 {
@@ -34,12 +34,22 @@
 					display: flex;
 					align-items: flex-start;
 					margin-bottom: 0.8rem;
+					opacity: 0;
+					transform: translateX(-20px);
+					animation: fadingIn 250ms ease-in-out forwards;
 
 					.icon {
-						color: inherit;
+						color: var(--bg-1);
 						font-size: inherit;
 						width: max-content;
 						margin-right: 0.8rem;
+					}
+
+					@keyframes fadingIn {
+						100% {
+							opacity: 1;
+							transform: translate(0);
+						}
 					}
 				}
 			}
@@ -57,7 +67,7 @@
 			@include centering;
 			z-index: 99;
 			border-radius: 20px 0 0 20px;
-			padding: 0rem 2rem 1rem 1rem;
+			padding: 0rem 2rem 1rem 0.6rem;
 
 			.icon {
 				font-size: 2rem;
@@ -88,6 +98,12 @@
 			}
 		}
 	}
+
+	.graph-section {
+		width: 100%;
+		margin: 0 auto;
+		max-width: 50rem;
+	}
 }
 
 .modal-backdrop {
@@ -101,6 +117,8 @@
 		border-radius: 8px;
 		display: flex;
 		flex-direction: column;
+		overflow: hidden;
+		resize: none;
 
 		.top {
 			width: 100%;
@@ -109,7 +127,7 @@
 			align-items: center;
 			padding: 1rem;
 			gap: 1rem;
-			margin-bottom: 3rem;
+			margin-bottom: 2rem;
 			position: relative;
 
 			&::before {
@@ -130,9 +148,11 @@
 				width: 10rem;
 			}
 			p {
-				font-size: 1.2rem;
+				font-size: 1.4rem;
 				font-weight: 700;
 				color: var(--bg-1);
+				flex: 1;
+				padding-right: 4rem;
 			}
 		}
 
@@ -140,11 +160,31 @@
 			width: 100%;
 			height: 70%;
 			padding: 0 1rem;
+			display: flex;
+			flex-direction: column;
+			overflow-y: scroll;
 
 			p {
 				font-size: 1.5rem;
 				color: var(--font-1);
 				margin-bottom: 0.8rem;
+				width: 95%;
+				padding: 1rem;
+				border-radius: 14px;
+				// &::before {
+
+				// }
+			}
+
+			.bot {
+				align-self: flex-start;
+				color: var(--font-2);
+				background: var(--bg-1);
+			}
+			.person {
+				align-self: flex-end;
+				color: var(--font-1);
+				background: var(--font-2);
 			}
 		}
 
@@ -160,7 +200,79 @@
 				padding: 1.4rem;
 				font-size: 1.5rem;
 				color: var(--font-1);
+				resize: none;
 			}
 		}
 	}
 }
+
+@media (min-width: $tablet-small) {
+	.home-page {
+		grid-template-columns: 100%;
+		padding: 4rem 3rem 5rem 3rem;
+
+		.text-section {
+			.sec-1,
+			.sec-2 {
+				h1 {
+					font-size: 2.8rem;
+					margin-bottom: 1.6rem;
+				}
+				p {
+					font-size: 1.5rem;
+				}
+			}
+		}
+
+		.chatbot-section {
+			.btn-container {
+				border-radius: 20px 0 0 20px;
+				padding: 0rem 2rem 1rem 1rem;
+
+				.icon {
+					font-size: 2.2rem;
+				}
+			}
+		}
+
+		.graph-section {
+			width: 90%;
+		}
+	}
+
+	.modal-backdrop {
+		.chat-container {
+			width: 80%;
+			height: 85%;
+			max-width: 60rem;
+			max-height: 75rem;
+
+			.top {
+				gap: 2rem;
+				margin-bottom: 3em;
+
+				img {
+					width: 12rem;
+				}
+				p {
+					font-size: 1.6rem;
+				}
+			}
+
+			.middle {
+				padding: 0 2rem;
+				p {
+					font-size: 1.5rem;
+					margin-bottom: 1rem;
+					width: 90%;
+					line-height: 2.2rem;
+					padding: 1.2rem;
+				}
+			}
+		}
+	}
+}
+
+// @media (min-width: $tablet-large) {
+
+// }

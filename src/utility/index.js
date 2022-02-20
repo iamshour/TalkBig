@@ -12,6 +12,16 @@ export const Logo = () => {
 	)
 }
 
+export const avatar = () => {
+	return (
+		<img
+			src='https://res.cloudinary.com/dniaqkd0y/image/upload/v1639408597/blank-profile-picture-973460_640_caalj3.png'
+			alt='user profile avatar'
+			className='avatar'
+		/>
+	)
+}
+
 export const loginInputs = [
 	{
 		name: "email",
@@ -47,3 +57,29 @@ export const registerInputs = [
 		icon: <BiKey className='icon' />,
 	},
 ]
+
+export const botGreeting = {
+	text: "Hey there!👋 Nice to meet you!💛 Ask me anything on our services. I'm all ears😉",
+	owner: "bot",
+}
+
+let greetings = ["hi", "hello", "hey"]
+let questions = ["how are you", "how are you?", "how are you doing?", "how you been?"]
+
+export const dialogue = (message) => {
+	if (greetings.includes(message)) {
+		return {
+			text: "Hello there! You're most welcomed here at TalkBig! How can I help you?🙂",
+			owner: "bot",
+		}
+	} else if (questions.includes(message)) {
+		return {
+			text: "I'm doing pretty good! Thanks for asking! What about you?",
+			owner: "bot",
+		}
+	}
+	return {
+		text: "If you find our answers not very helpful, check out our FAQs in the about page!",
+		owner: "bot",
+	}
+}

@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=Damion&family=Poppins:wght@400;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Literata:wght@500&family=Poppins:wght@400;700&display=swap");
 
 @import "./resets";
 @import "./mixins";
@@ -13,14 +13,12 @@
 @import "comps/header/theme";
 @import "comps/fragments";
 
-.btn-main {
+.btn-main,
+.btn-dark {
 	@include centering;
 	cursor: pointer;
 	transition: all 200ms ease-in-out;
-	color: var(--bg-1);
 	border-radius: 4px;
-	background: var(--btn-main-bg);
-	box-shadow: var(--btn-main-shadow);
 
 	p,
 	.icon {
@@ -31,6 +29,16 @@
 	&:active {
 		transform: translateY(-2px);
 	}
+}
+
+.btn-main {
+	color: var(--bg-1);
+	background: var(--btn-main-bg);
+	box-shadow: var(--btn-main-shadow);
+}
+.btn-dark {
+	background: var(--bg-1);
+	color: var(--font-2);
 }
 
 header {
@@ -84,4 +92,9 @@ input {
 			color: var(--bg-1);
 		}
 	}
+}
+
+.home-page,
+.auth-page {
+	@include fade-in;
 }

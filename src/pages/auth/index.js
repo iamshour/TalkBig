@@ -31,11 +31,10 @@ export default function Auth() {
 		} else {
 			signUp(dispatch, userData)
 		}
-		console.log(state?.notify)
 	}
 
 	useEffect(() => {
-		if (localUser) return navigate("/home")
+		if (localUser) return navigate("/")
 	}, [localUser, navigate])
 
 	const handleChange = (e) => {
@@ -80,6 +79,10 @@ export default function Auth() {
 		)
 	}
 
+	const wrapperClass = () => {
+		return !showSignIn ? "sign-up-wrapper" : ""
+	}
+
 	return (
 		<div className='auth-page'>
 			{Logo()}
@@ -95,7 +98,7 @@ export default function Auth() {
 							</button>
 						</p>
 					</div>
-					<div className='inputs-wrapper'>
+					<div className={`inputs-wrapper ${wrapperClass()}`}>
 						{inputs.map((input, index) => (
 							<div className='input-bar-icon' key={index}>
 								{input.icon}

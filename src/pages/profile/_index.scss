@@ -1,0 +1,129 @@
+.profile-page {
+	width: 100%;
+	min-height: calc(100vh - 74px);
+
+	.profile-wrapper {
+		width: 100%;
+		padding: 2.4rem 2rem;
+
+		.headline {
+			font-size: 2rem;
+			color: var(--bg-1);
+			margin-bottom: 4rem;
+			border-bottom: 1px solid var(--bg-1);
+			width: max-content;
+		}
+
+		.img-wrapper {
+			width: 100%;
+			@include centering;
+			margin-bottom: 5rem;
+			img {
+				width: 12rem;
+				border-radius: 50%;
+				border: 2px solid var(--input-border);
+				box-shadow: var(--nav-btn-shadow);
+			}
+		}
+
+		.inputs-wrapper {
+			width: 100%;
+			padding: 1.6rem;
+			background: var(--nav-btn-bg);
+			box-shadow: var(--nav-btn-shadow);
+			border-radius: 8px;
+
+			.row {
+				width: 100%;
+				display: flex;
+				align-items: center;
+				justify-content: flex-start;
+				margin-bottom: 1.6rem;
+				font-size: 2rem;
+				color: var(--font-1);
+
+				.icon {
+					margin-right: 0.8rem;
+				}
+
+				&:nth-of-type(2) {
+					margin-bottom: 2.4rem;
+				}
+			}
+
+			.btn-dark {
+				width: 244px;
+				font-size: 2rem;
+				margin: 0 auto;
+				padding: 0.9rem 2rem;
+
+				&:nth-of-type(1) {
+					margin-bottom: 1rem;
+					background-color: var(--font-2);
+					color: var(--font-1);
+				}
+
+				.icon {
+					margin-right: 0.8rem;
+				}
+			}
+		}
+	}
+}
+
+.modal-backdrop {
+	.profile-modal-content {
+		width: 85%;
+		height: 75%;
+		background: var(--nav-bg);
+		border-radius: 20px;
+
+		.wrapper {
+			height: 100%;
+			width: 100%;
+			display: flex;
+			flex-direction: column;
+			align-items: center;
+			justify-content: space-around;
+
+			h2 {
+				margin: 0 auto;
+				padding: 3rem 2rem;
+				font-size: 2rem;
+				color: var(--bg-1);
+			}
+
+			.inputs {
+				width: 100%;
+				margin-bottom: 2rem;
+				.input-bar-icon {
+					width: 85%;
+					max-width: 40rem;
+					margin: 0 auto;
+					margin-bottom: 0.8rem;
+				}
+			}
+
+			.btns {
+				width: 100%;
+				display: flex;
+				align-items: center;
+				justify-content: space-around;
+				padding: 2rem;
+
+				button {
+					padding: 1.5rem;
+					font-size: 1.6rem;
+
+					.icon {
+						margin-right: 0.8rem;
+					}
+
+					&:nth-of-type(2) {
+						box-shadow: unset;
+					}
+				}
+			}
+		}
+	}
+}

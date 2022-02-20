@@ -1,4 +1,4 @@
-import { NOTIFY, AUTH, SIGN_OUT, STATS } from "./types"
+import { NOTIFY, AUTH, SIGN_OUT, STATS, PROFILE, UPDATE } from "./types"
 
 export const reducer = (state, { type, payload }) => {
 	switch (type) {
@@ -7,23 +7,33 @@ export const reducer = (state, { type, payload }) => {
 				...state,
 				notify: payload,
 			}
-
 		case AUTH:
 			return {
 				...state,
-				user: payload,
+				userId: payload,
 			}
-
 		case STATS:
 			return {
 				...state,
 				stats: payload,
 			}
 
+		case PROFILE:
+			return {
+				...state,
+				userInfo: payload,
+			}
+		case UPDATE:
+			return {
+				...state,
+				userInfo: payload,
+			}
+
 		case SIGN_OUT:
 			return {
 				...state,
-				user: {},
+				userInfo: {},
+				userId: {},
 			}
 
 		default:

@@ -13,7 +13,6 @@ export default function Navbar() {
 	const [navActive, setNavActive] = useState(false)
 
 	const [state, dispatch] = useContext(GlobalContext)
-	console.log(state?.notify)
 
 	const switcherClass = () => {
 		return navActive ? "nav-active" : ""
@@ -26,7 +25,7 @@ export default function Navbar() {
 	}
 
 	const navList = [
-		{ title: "Home", icon: <GoHome className='icon' />, link: "/home" },
+		{ title: "Home", icon: <GoHome className='icon' />, link: "/" },
 		{ title: "Profile", icon: <AiOutlineUser className='icon' />, link: "/profile" },
 		{ title: "About", icon: <BsInfoCircle className='icon' />, link: "/about" },
 		{ title: "Sign Out", icon: <FiLogOut className='icon' />, link: null },
