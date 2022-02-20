@@ -1,8 +1,16 @@
 import { NOTIFY, AUTH, SIGN_OUT, STATS, PROFILE, UPDATE } from "./types"
 import axios from "axios"
 
-const API = axios.create({ baseURL: "https://talkbig.herokuapp.com" })
 // const API = axios.create({ baseURL: "http://localhost:5000" })
+
+const API = axios.create({
+	baseURL: "https://talkbig.herokuapp.com/",
+	withCredentials: false,
+	headers: {
+		"Access-Control-Allow-Origin": "*",
+		"Access-Control-Allow-Methods": "GET,PUT,POST,DELETE,PATCH,OPTIONS",
+	},
+})
 
 API.interceptors.request.use((req) => {
 	if (localStorage.getItem("user")) {
@@ -20,7 +28,7 @@ export const signIn = async (dispatch, userData) => {
 			type: NOTIFY,
 			payload: { loading: true },
 		})
-		const { data } = await API.post("/auth/login", userData)
+		const { data } = await API.post("auth/login", userData)
 		dispatch({
 			type: AUTH,
 			payload: data,
@@ -49,7 +57,7 @@ export const signUp = async (dispatch, userData) => {
 			type: NOTIFY,
 			payload: { loading: true },
 		})
-		const { data } = await API.post("/auth/register", userData)
+		const { data } = await API.post("auth/register", userData)
 
 		dispatch({
 			type: AUTH,
@@ -77,7 +85,7 @@ export const signUp = async (dispatch, userData) => {
 
 export const getstats = async (dispatch) => {
 	try {
-		const { data } = await API.get("/stats")
+		const { data } = await API.get("stats")
 		dispatch({
 			type: STATS,
 			payload: data,
@@ -121,7 +129,7 @@ export const signOut = async (dispatch) => {
 
 export const viewProfile = async (dispatch, userId) => {
 	try {
-		const { data } = await API.get(`/users/${userId}`)
+		const { data } = await API.get(`users/${userId}`)
 		dispatch({
 			type: PROFILE,
 			payload: data,
@@ -140,7 +148,7 @@ export const updateProfile = async (dispatch, userId, userData) => {
 			type: NOTIFY,
 			payload: { loading: true },
 		})
-		const { data } = await API.put(`/users/profile/${userId}`, userData)
+		const { data } = await API.put(`users/profile/${userId}`, userData)
 		dispatch({
 			type: UPDATE,
 			payload: data,
@@ -168,7 +176,7 @@ export const updatePass = async (dispatch, userId, userData) => {
 			type: NOTIFY,
 			payload: { loading: true },
 		})
-		const { data } = await API.put(`/users/password/${userId}`, userData)
+		const { data } = await API.put(`users/password/${userId}`, userData)
 		setTimeout(() => {
 			dispatch({
 				type: NOTIFY,
