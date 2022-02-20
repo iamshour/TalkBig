@@ -25,7 +25,7 @@ export default function Navbar() {
 	}
 
 	const navList = [
-		{ title: "Home", icon: <GoHome className='icon' />, link: "/" },
+		{ title: "Home", icon: <GoHome className='icon' />, link: "/home" },
 		{ title: "Profile", icon: <AiOutlineUser className='icon' />, link: "/profile" },
 		{ title: "About", icon: <BsInfoCircle className='icon' />, link: "/about" },
 		{ title: "Sign Out", icon: <FiLogOut className='icon' />, link: null },
@@ -50,7 +50,7 @@ export default function Navbar() {
 									setNavActive(false)
 									if (item.title.startsWith("Sign Out")) {
 										signOut(dispatch)
-										navigate("/auth")
+										navigate("/")
 									} else {
 										navigate(item.link)
 									}

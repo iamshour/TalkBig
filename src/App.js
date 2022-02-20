@@ -10,7 +10,7 @@ import Notification from "comps/fragments/Notification"
 
 function App() {
 	const pages = [
-		{ path: "/", component: <Home /> },
+		{ path: "/home", component: <Home /> },
 		{ path: "/profile", component: <Profile /> },
 		{ path: "/about", component: <About /> },
 	]
@@ -20,6 +20,15 @@ function App() {
 			<Header />
 			<Notification />
 			<Routes>
+				<Route
+					exact
+					path='/'
+					element={
+						<PublicRoute>
+							<Auth />
+						</PublicRoute>
+					}
+				/>
 				{pages.map((page, index) => (
 					<Route
 						key={index}
@@ -30,14 +39,7 @@ function App() {
 						}
 					/>
 				))}
-				<Route
-					path='/auth'
-					element={
-						<PublicRoute>
-							<Auth />
-						</PublicRoute>
-					}
-				/>
+
 				<Route path='*' element={<NotFound />} />
 			</Routes>
 		</Router>

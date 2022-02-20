@@ -1,4 +1,4 @@
-import { updatePass, updateProfile } from "context/actions"
+import { updatePass } from "context/actions"
 import { IoIosCloseCircleOutline } from "react-icons/io"
 import { BsCheck2Circle } from "react-icons/bs"
 import { useState } from "react"

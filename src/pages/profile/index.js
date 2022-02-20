@@ -18,7 +18,7 @@ export default function Profile() {
 
 	useEffect(() => {
 		viewProfile(dispatch, userId)
-	}, [notify?.success])
+	}, [notify?.success, dispatch, userId])
 
 	const myData = [
 		{ title: userInfo.name, icon: <AiOutlineUser className='icon' /> },

@@ -1,5 +1,5 @@
 import Modal from "comps/fragments/Modal"
-import { useEffect, useRef, useState } from "react"
+import { useRef, useState } from "react"
 import { botGreeting, dialogue, Logo } from "utility"
 import Bot from "./Bot"
 
@@ -11,7 +11,7 @@ export default function Chat() {
 	const [chatFlow, setChatFlow] = useState([botGreeting])
 
 	const handleSubmit = (e) => {
-		if (e.keyCode == 13 && e.shiftKey == false) {
+		if (e.keyCode === 13 && e.shiftKey === false) {
 			e.preventDefault()
 
 			let personMsg = { text: newMessage, owner: "person" }
