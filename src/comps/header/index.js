@@ -4,10 +4,10 @@ import Theme from "./theme"
 
 export default function Header() {
 	const location = useLocation()
-	const isAuthPage = location.pathname.startsWith("/") ? true : false
+	const notAuthPage = location.pathname !== "/" ? true : false
 	return (
 		<header>
-			{!isAuthPage && <Navbar />}
+			{notAuthPage && <Navbar />}
 			<Theme />
 		</header>
 	)
