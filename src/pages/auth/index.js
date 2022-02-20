@@ -34,7 +34,7 @@ export default function Auth() {
 	}
 
 	useEffect(() => {
-		if (localUser) return navigate("/")
+		if (localUser) return navigate("/home")
 	}, [localUser, navigate])
 
 	const handleChange = (e) => {
