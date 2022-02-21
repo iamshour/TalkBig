@@ -155,3 +155,11 @@
 		z-index: inherit;
 	}
 }
+
+@media (min-width: 1200px) {
+	.loading-container {
+		svg {
+			width: 800px;
+		}
+	}
+}
