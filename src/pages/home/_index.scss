@@ -524,7 +524,11 @@
 
 			.top-section {
 				padding: 5rem 6rem 4rem 6rem;
+
 				.text {
+					padding-left: 3rem;
+					@include centering;
+					justify-content: flex-start;
 					h1 {
 						font-size: 3.2rem;
 						max-width: 34rem;
@@ -555,7 +559,7 @@
 
 		.middle-section {
 			padding: 4rem;
-			margin-bottom: 10rem;
+			margin-bottom: 18rem;
 			display: flex;
 			justify-content: space-around;
 			align-items: center;
@@ -628,11 +632,6 @@
 				padding: 0 5rem 6rem 5rem;
 				max-width: 1260px;
 				margin: 0 auto;
-				.text {
-					padding-left: 3rem;
-					@include centering;
-					justify-content: flex-start;
-				}
 			}
 
 			.hands-section {

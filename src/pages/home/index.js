@@ -55,6 +55,7 @@ export default function Home() {
 					},
 				})
 			}, 1000)
+			e.target.value = ""
 		}
 	}
 

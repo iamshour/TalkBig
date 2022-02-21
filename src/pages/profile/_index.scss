@@ -129,3 +129,38 @@
 		}
 	}
 }
+
+@media (min-width: $tablet-small) {
+	.modal-backdrop {
+		.profile-modal-content {
+			max-width: 76rem;
+			.wrapper {
+				h2 {
+					padding: 3rem 2rem;
+					font-size: 3rem;
+				}
+
+				.inputs {
+					.input-bar-icon {
+						margin-bottom: 1.2rem;
+						font-size: 1.7rem;
+					}
+				}
+
+				.btns {
+					max-width: 40rem;
+					padding: 1.2rem;
+
+					button {
+						padding: 1.7rem;
+						font-size: 2rem;
+
+						.icon {
+							margin-right: 1rem;
+						}
+					}
+				}
+			}
+		}
+	}
+}
