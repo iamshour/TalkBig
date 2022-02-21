@@ -1,3 +1,4 @@
+import Globe from "comps/auth/globe"
 import Wave from "comps/auth/Wave"
 import { signIn, signUp } from "context/actions"
 import { GlobalContext } from "context/globalContext"
@@ -88,6 +89,9 @@ export default function Auth() {
 			{Logo()}
 			<div className='form-wrapper'>
 				<Wave />
+				<div className='globe-container'>
+					<Globe />
+				</div>
 				<form onSubmit={submitHandler} autoComplete='off'>
 					<div className='text'>
 						<h1>{title}</h1>

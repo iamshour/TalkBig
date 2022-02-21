@@ -1,7 +1,9 @@
 import Chat from "comps/home/Chat"
 import Graph from "comps/home/Graph"
+import { GlobalContext } from "context/globalContext"
+import { NOTIFY } from "context/types"
 import Lottie from "lottie-web-light"
-import { useEffect, useState } from "react"
+import { useContext, useEffect, useState } from "react"
 import { BsPatchCheck } from "react-icons/bs"
 import { IoMailOpenOutline } from "react-icons/io5"
 import LottieSvg1 from "temp/connect.json"
@@ -16,6 +18,8 @@ export default function Home() {
 		{ text: "Code-free tools to implement advanced web messaging software!" },
 		{ text: "Keep everyone happy!!" },
 	]
+
+	const [{ notify }, dispatch] = useContext(GlobalContext)
 
 	const [offSetY, setOffsetY] = useState(0)
 
@@ -38,6 +42,21 @@ export default function Home() {
 			autoplay: true,
 		})
 	}, [])
+
+	const handleKeyDown = (e) => {
+		if (e.keyCode === 13 && e.shiftKey === false) {
+			e.preventDefault()
+
+			setTimeout(() => {
+				dispatch({
+					type: NOTIFY,
+					payload: {
+						success: "Thanks for subscribing! We Will contact you very shortly!",
+					},
+				})
+			}, 1000)
+		}
+	}
 
 	return (
 		<div>
@@ -90,7 +109,7 @@ export default function Home() {
 					<h1>Subscribe to our newsletter &amp; stay tuned!</h1>
 					<div className='input-bar-icon'>
 						<IoMailOpenOutline className='icon' />
-						<input type='text' placeholder='Subscribe ' />
+						<input type='text' placeholder='Subscribe' onKeyDown={handleKeyDown} />
 					</div>
 				</div>
 				<Chat />

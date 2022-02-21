@@ -6,7 +6,7 @@ export default function Header() {
 	const location = useLocation()
 	const notAuthPage = location.pathname !== "/" ? true : false
 	return (
-		<header>
+		<header style={!notAuthPage ? { justifyContent: "flex-end" } : {}}>
 			{notAuthPage && <Navbar />}
 			<Theme />
 		</header>
