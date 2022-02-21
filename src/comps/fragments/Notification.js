@@ -4,25 +4,23 @@ import Loading from "./Loading"
 import { NOTIFY } from "context/types"
 
 export default function Notification() {
-	// const [{ notify }, dispatch] = useContext(GlobalContext)
+	const [{ notify }, dispatch] = useContext(GlobalContext)
 	const toastRef = useRef(null)
 
-	let notify = { loading: true }
+	useEffect(() => {
+		if (notify?.error || notify?.success) {
+			setTimeout(() => {
+				toastRef.current.style.animationName = "slidingOut"
+			}, 3000)
 
-	// useEffect(() => {
-	// 	if (notify?.error || notify?.success) {
-	// 		setTimeout(() => {
-	// 			toastRef.current.style.animationName = "slidingOut"
-	// 		}, 3000)
-
-	// 		setTimeout(() => {
-	// 			dispatch({
-	// 				type: NOTIFY,
-	// 				payload: {},
-	// 			})
-	// 		}, 4000)
-	// 	}
-	// }, [notify?.error, notify?.success, dispatch])
+			setTimeout(() => {
+				dispatch({
+					type: NOTIFY,
+					payload: {},
+				})
+			}, 4000)
+		}
+	}, [notify?.error, notify?.success, dispatch])
 
 	return (
 		<>
