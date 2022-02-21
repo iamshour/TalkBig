@@ -32,6 +32,8 @@
 			background: var(--nav-btn-bg);
 			box-shadow: var(--nav-btn-shadow);
 			border-radius: 8px;
+			max-width: 44rem;
+			margin: 0 auto;
 
 			.row {
 				width: 100%;

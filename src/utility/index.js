@@ -2,6 +2,12 @@ import { BiKey } from "react-icons/bi"
 import { IoMailOpenOutline } from "react-icons/io5"
 import { AiOutlineUser } from "react-icons/ai"
 
+export const handLeft =
+	"https://res.cloudinary.com/dniaqkd0y/image/upload/v1645413557/hand-robot_djo8xl.png"
+
+export const handRight =
+	"https://res.cloudinary.com/dniaqkd0y/image/upload/v1645413558/hand-person_u7jnbj.png"
+
 export const Logo = () => {
 	return (
 		<img

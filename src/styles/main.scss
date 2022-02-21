@@ -41,14 +41,6 @@
 	color: var(--font-2);
 }
 
-header {
-	width: 100%;
-	padding: 2rem 1.6rem;
-	display: flex;
-	justify-content: flex-end;
-	align-items: center;
-}
-
 input {
 	width: 100%;
 	font-size: 1.6rem;
@@ -95,6 +87,8 @@ input {
 }
 
 .home-page,
-.auth-page {
+.auth-page,
+.profile-page,
+.about-page {
 	@include fade-in;
 }

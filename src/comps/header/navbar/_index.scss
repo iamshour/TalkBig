@@ -1,3 +1,11 @@
+header {
+	width: 100%;
+	padding: 2rem 1.6rem;
+	display: flex;
+	justify-content: flex-end;
+	align-items: center;
+}
+
 .nav-btn {
 	position: fixed;
 	top: 2rem;
@@ -70,6 +78,7 @@
 
 	nav {
 		width: 65%;
+		max-width: 26rem;
 		height: 100%;
 		padding: 10rem 2rem 7rem 2rem;
 		display: flex;
@@ -124,6 +133,9 @@
 					color: var(--font-hover);
 				}
 			}
+			.active-route {
+				color: var(--bg-1);
+			}
 		}
 
 		.img-wrapper {
@@ -144,5 +156,108 @@
 	z-index: 10;
 	nav {
 		transform: translateX(0);
+	}
+}
+
+@media (min-width: $tablet-large) {
+	header {
+		justify-content: space-between;
+	}
+
+	.nav-btn {
+		display: none;
+	}
+
+	.nav-backdrop {
+		position: relative;
+		height: 100%;
+		width: 100%;
+		display: unset;
+		opacity: 1;
+		visibility: visible;
+		z-index: 2;
+		background: transparent;
+
+		nav {
+			width: unset;
+			max-width: unset;
+			height: 100%;
+			padding: 0;
+			flex-direction: row-reverse;
+			position: relative;
+			z-index: 1;
+			justify-content: flex-end;
+			transform: unset;
+
+			&::before {
+				display: none;
+			}
+
+			.nav-links {
+				margin-left: 4.6rem;
+				display: flex;
+				.nav-row {
+					margin: 0 1.4rem;
+					width: unset;
+					padding: 1.6rem;
+					border-radius: 16px;
+					display: flex;
+					flex-direction: row-reverse;
+					align-items: center;
+					gap: 0;
+					font-size: 2rem;
+					margin-bottom: 0;
+					background: var(--nav-btn-bg);
+					box-shadow: var(--nav-btn-shadow);
+					position: relative;
+
+					h1 {
+						position: absolute;
+						bottom: -60px;
+						left: 50%;
+						right: 50%;
+						transform: translate(-50%, -50%);
+						padding: 1rem 3rem;
+						border-radius: 4px;
+						font-size: 1.3rem;
+						@include centering;
+						background: var(--bg-1);
+						color: var(--font-2);
+						opacity: 0;
+						visibility: hidden;
+						transition: opacity 250ms ease-in-out, visibility 250ms ease-in-out;
+					}
+
+					.icon {
+						font-size: 2.2rem;
+						line-height: 2.2rem;
+					}
+
+					&:hover,
+					&:active {
+						color: var(--font-hover);
+
+						h1 {
+							opacity: 1;
+							visibility: visible;
+							height: unset;
+							width: unset;
+						}
+					}
+				}
+				.active-route {
+					box-shadow: var(--nav-btn-shadow-pressed);
+				}
+			}
+
+			.img-wrapper {
+				width: unset;
+				display: unset;
+				img {
+					width: 9rem;
+					left: 0;
+				}
+			}
+		}
 	}
 }

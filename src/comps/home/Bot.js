@@ -15,7 +15,7 @@ export default function Bot({ setOpen }) {
 	}, [])
 
 	return (
-		<div className='btn-container'>
+		<div className='bot-container'>
 			<BsChatRightText className='icon' />
 			<button onClick={() => setOpen(true)}>
 				<div id='bot-svg' />

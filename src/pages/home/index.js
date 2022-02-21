@@ -1,6 +1,11 @@
 import Chat from "comps/home/Chat"
 import Graph from "comps/home/Graph"
+import Lottie from "lottie-web-light"
+import { useEffect, useState } from "react"
 import { BsPatchCheck } from "react-icons/bs"
+import { IoMailOpenOutline } from "react-icons/io5"
+import LottieSvg1 from "temp/connect.json"
+import { handLeft, handRight } from "utility"
 
 export default function Home() {
 	const textList = [
@@ -9,21 +14,60 @@ export default function Home() {
 			text: "Build custom chatbots integrate it's superpowers for user's websites or via their social media accounts!",
 		},
 		{ text: "Code-free tools to implement advanced web messaging software!" },
+		{ text: "Keep everyone happy!!" },
 	]
+
+	const [offSetY, setOffsetY] = useState(0)
+
+	const handleScolling = () => {
+		setOffsetY(window.pageYOffset)
+	}
+
+	useEffect(() => {
+		window.addEventListener("scroll", handleScolling)
+
+		return () => window.removeEventListener("scroll", handleScolling)
+	}, [])
+
+	useEffect(() => {
+		Lottie.loadAnimation({
+			container: document.querySelector("#lottie-svg-1"),
+			animationData: LottieSvg1,
+			renderer: "svg",
+			loop: true,
+			autoplay: true,
+		})
+	}, [])
 
 	return (
 		<div>
 			<div className='home-page'>
-				<section className='text-section'>
-					<div className='sec-1'>
-						<h1>Let's build the future together! 💙</h1>
-						<p>
-							<span>TalkBig</span> helps startsups &amp; businesses stand-out with award
-							winning messaging integrations and tools!
-						</p>
+				<div className='hero-container'>
+					<section className='top-section'>
+						<div className='text'>
+							<h1>
+								<span>Connecting</span>
+								<br /> businesses &amp; clients is our game!
+							</h1>
+						</div>
+						<div id='lottie-svg-1' />
+					</section>
+					<div className='hands-section'>
+						<img
+							src={handLeft}
+							alt='handle of a robot'
+							style={{ transform: `translateX(-${offSetY * 0.2}px)` }}
+						/>
+						<img
+							src={handRight}
+							alt='handle of a person'
+							style={{ transform: `translateX(${offSetY * 0.2}px)` }}
+						/>
 					</div>
-					<div className='sec-2'>
-						<h1>Services for our users</h1>
+				</div>
+				<section className='middle-section'>
+					<div className='text'>
+						<h1>Some of our favorite services!</h1>
 						<div className='list-container'>
 							{textList.map((item, index) => (
 								<div
@@ -38,13 +82,18 @@ export default function Home() {
 							))}
 						</div>
 					</div>
+					<section className='graph'>
+						<Graph />
+					</section>
 				</section>
-				<section className='graph-section'>
-					<Graph />
-				</section>
-				<section className='chatbot-section'>
-					<Chat />
-				</section>
+				<div className='bottom-section'>
+					<h1>Subscribe to our newsletter &amp; stay tuned!</h1>
+					<div className='input-bar-icon'>
+						<IoMailOpenOutline className='icon' />
+						<input type='text' placeholder='Subscribe ' />
+					</div>
+				</div>
+				<Chat />
 			</div>
 		</div>
 	)

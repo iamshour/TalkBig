@@ -1,7 +1,14 @@
 import { NOTIFY, AUTH, SIGN_OUT, STATS, PROFILE, UPDATE } from "./types"
 import axios from "axios"
 
-// const API = axios.create({ baseURL: "http://localhost:5000" })
+// const API = axios.create({
+// 	baseURL: "http://localhost:5000/",
+// 	withCredentials: false,
+// 	headers: {
+// 		"Access-Control-Allow-Origin": "*",
+// 		"Access-Control-Allow-Methods": "GET,PUT,POST,DELETE,PATCH,OPTIONS",
+// 	},
+// })
 
 const API = axios.create({
 	baseURL: "https://talkbig.herokuapp.com/",
@@ -100,11 +107,11 @@ export const getstats = async (dispatch) => {
 	}
 }
 
-export const signOut = async (dispatch) => {
+export const signOut = async (dispatch, message) => {
 	try {
 		dispatch({
 			type: NOTIFY,
-			pauload: { loading: true },
+			payload: { loading: true },
 		})
 		dispatch({
 			type: SIGN_OUT,
@@ -114,7 +121,7 @@ export const signOut = async (dispatch) => {
 				type: NOTIFY,
 				payload: {
 					loading: false,
-					success: `Signed Out successfully!`,
+					success: message,
 				},
 			})
 		}, 10)
