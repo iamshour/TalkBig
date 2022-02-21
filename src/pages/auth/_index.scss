@@ -109,21 +109,6 @@
 					}
 				}
 
-				.show-pass-btn {
-					@include centering;
-					cursor: pointer;
-					transition: transform 250ms ease-in-out;
-
-					.icon {
-						font-size: 2.2rem;
-					}
-
-					&:hover,
-					&:active {
-						transform: scale(1.05);
-					}
-				}
-
 				.forgot-pass {
 					place-self: flex-start;
 					margin: 2rem 0 0 4rem;

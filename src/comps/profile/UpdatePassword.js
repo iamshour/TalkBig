@@ -2,7 +2,7 @@ import { updatePass } from "context/actions"
 import { IoIosCloseCircleOutline } from "react-icons/io"
 import { BsCheck2Circle } from "react-icons/bs"
 import { useState } from "react"
-import { AiOutlineUser } from "react-icons/ai"
+import { AiOutlineEye, AiOutlineEyeInvisible, AiOutlineUser } from "react-icons/ai"
 import { IoMailOpenOutline } from "react-icons/io5"
 
 export default function UpdatePassword({ dispatch, userId, setOpen }) {
@@ -11,6 +11,12 @@ export default function UpdatePassword({ dispatch, userId, setOpen }) {
 		newPass: "",
 		confirmNewPass: "",
 	})
+
+	const [showPass, setShowPass] = useState(false)
+
+	const passCondition = () => {
+		return showPass ? "text" : "password"
+	}
 
 	const inputs = [
 		{
@@ -49,13 +55,25 @@ export default function UpdatePassword({ dispatch, userId, setOpen }) {
 						<div className='input-bar-icon' key={index}>
 							{input.icon}
 							<input
-								type='password'
+								type={passCondition()}
 								placeholder={input.placeholder}
 								onChange={handleChange}
 								name={input.name}
 								spellCheck='false'
 								autoComplete='off'
 							/>
+							{input.name.startsWith("oldPass") && (
+								<button
+									type='button'
+									className='show-pass-btn'
+									onClick={() => setShowPass((prev) => !prev)}>
+									{showPass ? (
+										<AiOutlineEyeInvisible className='icon' />
+									) : (
+										<AiOutlineEye className='icon' />
+									)}
+								</button>
+							)}
 						</div>
 					))}
 				</div>
