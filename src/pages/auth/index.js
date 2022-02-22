@@ -119,7 +119,7 @@ export default function Auth() {
 						))}
 						{showSignIn && (
 							<div className='forgot-pass'>
-								<Link to='/forgotpass'>Forgot pass?</Link>
+								<Link to='/forgot'>Forgot pass?</Link>
 							</div>
 						)}
 					</div>
